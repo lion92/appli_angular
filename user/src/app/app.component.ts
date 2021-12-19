@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UserService} from "./user.service";
+import {User} from "./User";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,12 +11,30 @@ import {UserService} from "./user.service";
 
 export class AppComponent implements OnInit {
   title = 'user';
-  user: Promise<unknown> | undefined;
+
+  // @ts-ignore
+  users: User[];
+
+
 
   constructor(public data: UserService) {
+
   }
 
   ngOnInit(): void {
-    console.log(this.data.register({"firstName": "testwork2", "lastName": "testlastname22", "id": 0}))
+  this.data.getUsers().then(data=>{
+  this.users=data;
+  console.log("/////"+this.users);
+  });
+
   }
-}
+
+ }
+
+
+
+
+
+
+
+
