@@ -11,8 +11,10 @@
   </div>
 </div>
 
-<div class="row content">
+<div class="container">
+  <app-user></app-user>
   <div class="col-sm-12">
+
     <table class="table table-striped">
       <thead>
       <tr>
@@ -24,7 +26,8 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of users">
+
+      <tr class="ml-3" *ngFor="let user of users">
         <td>{{ user.lastName }}</td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.id}}</td>
