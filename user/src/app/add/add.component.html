@@ -2,17 +2,19 @@
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
   <div class="form-group">
     <label class="ml-3" for="exampleInputEmail1">Nom</label>
-    <input   value={{this.data.getUser().lastName}} type="text" class=" pl-3 form-control-sm" id="exampleInputEmail1" aria-describedby="Nom" formControlName="lastName" placeholder="Enter Nom">
+    <input  (change)="lireNom($event)"  type="text" class=" pl-3 form-control-sm" id="exampleInputEmail1" aria-describedby="Nom" formControlName="lastName" placeholder="Enter Nom">
 
 
 
     <label class="ml-3">FirstName</label>
-    <input value={{this.data.getUser().firstName}} type="text" class="form-control-sm" id="exampleInputPassword1"  formControlName="firstName" placeholder="Password">
+    <input change="lirePrenom($event)" type="text" class="form-control-sm" id="exampleInputPassword1"  formControlName="firstName" placeholder="Password">
     <label class="ml-3">Id</label>
-    <input    value={{this.data.getUser().id}} type="text" class="form-control-sm"  formControlName="firstName" placeholder="Password">
+    <input   (change)="lireId($event)" type="text" class="form-control-sm"  placeholder="Password">
   </div>
 
   <button type="submit" class="ml-3 btn btn-primary">Submit</button>
 
 </form>
+
+<button (click)="this.data.deleteUser(this.id)">Delete</button>
 

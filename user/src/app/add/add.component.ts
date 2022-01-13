@@ -13,6 +13,7 @@ export class AddComponent implements OnInit {
  userForm:FormGroup;
  lastName="";
  firstName="";
+ id=0;
  valueFirstName="";
  valueLastName="";
  userToSend:User;
@@ -43,6 +44,19 @@ export class AddComponent implements OnInit {
 
 
 
+ }
+
+ lireNom(event:any){
+  console.log(event.target.value);
+   this.lastName=event.target.value;
+ }
+
+ lirePrenom(event:any){
+ this.firstName=event.target.value;
+ }
+
+ lireId(event:any){
+ this.id=+event.target.value;
  }
 
 
