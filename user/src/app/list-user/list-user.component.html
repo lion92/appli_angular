@@ -1,8 +1,4 @@
-<div class="row header">
-  <div class="col-sm">
-    <h4>Products</h4>
-  </div>
-</div>
+
 
 <div class="row">
   <div class="col-sm list-action-button">
@@ -17,25 +13,20 @@
       <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Code</th>
-        <th scope="col">Category</th>
-        <th scope="col">Unit</th>
-        <th scope="col">Purchase Rate</th>
-        <th scope="col">Sales Rate</th>
-        <th scope="col"></th>
-        <th scope="col"></th>
+        <th scope="col">LastName</th>
+        <th scope="col">FisrtName</th>
+        <th scope="col">Id</th>
+
       </tr>
       </thead>
+
       <tbody>
       <tr *ngFor="let user of users ; index as i">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ user.lastName }}</td>
         <td>{{ user.firstName }}</td>
         <td>{{ user.id}}</td>
-
-        <td><button class='fa fa-eye'  ></button></td>
-        <td><button class='delete-label fa fa-trash-o'  ></button></td>
+        <td (click)='edit(user)'>X</td>
       </tr>
       </tbody>
     </table>

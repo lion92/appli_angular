@@ -10,6 +10,7 @@ import {UserService} from "../user.service";
 })
 export class ListUserComponent implements OnInit {
   users: any=null;
+ private recupUser:User;
   constructor(public data: UserService) {
 
   }
@@ -21,6 +22,28 @@ export class ListUserComponent implements OnInit {
       console.log(e);
     });
   }
+
+  edit(user:User){
+  this.recupUser=user;
+  console.log(user);
+  this.data.setRecupUser(user);
+  }
+
+
+
+    setRecupUser(user:User){
+      this.recupUser= user;
+    }
+
+    getUser(){
+      let tempUser = this.recupUser;
+      this.clearUser();
+      return tempUser;
+    }
+
+    clearUser(){
+      this.recupUser = {lastName:"", firstName:"", id:0};
+    }
 
 }
 

@@ -10,7 +10,7 @@ import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
 export class UserService{
 
   url: string = "http://localhost:8082/demo";
-
+ private recupUser:User;
 
   constructor(private http: HttpClient) {
   }
@@ -30,6 +30,8 @@ export class UserService{
     });
   }
 
+
+
   getUsers():Promise<User[]> {
     return new Promise<User[]>((resolve, rejects) => {
       this.http.get(this.url + '/users').subscribe((data: any) => {
@@ -45,6 +47,27 @@ export class UserService{
       });
     });
   }
+
+  deleteUser(id:number) {
+      return new Promise((resolve, rejects) => {
+        this.http.delete(this.url + '/users/'+id).subscribe((data: any) => {
+          resolve(data);
+        });
+      });
+    }
+
+ setRecupUser(user:User){
+      this.recupUser= user;
+    }
+
+    getUser(){
+      if(this.recupUser===undefined){
+      this.recupUser = {lastName:"", firstName:"", id:0};
+      }
+      console.log(this.recupUser);
+      return this.recupUser;
+    }
+
 
 
 
