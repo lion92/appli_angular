@@ -7,7 +7,7 @@
 
 
     <label class="ml-3">FirstName</label>
-    <input change="lirePrenom($event)" type="text" class="form-control-sm" id="exampleInputPassword1"  formControlName="firstName" placeholder="Password">
+    <input (change)="lirePrenom($event)" type="text" class="form-control-sm" id="exampleInputPassword1"  formControlName="firstName" placeholder="Password">
     <label class="ml-3">Id</label>
     <input   (change)="lireId($event)" type="text" class="form-control-sm"  placeholder="Password">
   </div>
@@ -17,4 +17,5 @@
 </form>
 
 <button (click)="this.data.deleteUser(this.id)">Delete</button>
+<button (click)="this.data.updateUser(this.id, {lastName:this.lastName, firstName:this.firstName, id:0})">Update</button>
 

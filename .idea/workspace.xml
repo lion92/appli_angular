@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="efeab926-c966-4d62-89cb-51b0b84e9c26" name="Changes" comment="selectionner un user dans le projet">
+    <list default="true" id="efeab926-c966-4d62-89cb-51b0b84e9c26" name="Changes" comment="delete user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user/src/app/add/add.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/app/add/add.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user/src/app/add/add.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/user/src/app/add/add.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1642082135730</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="delete user">
+      <created>1642086869539</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1642086869539</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +145,7 @@
     <MESSAGE value="cors authorized" />
     <MESSAGE value="list users" />
     <MESSAGE value="selectionner un user dans le projet" />
-    <option name="LAST_COMMIT_MESSAGE" value="selectionner un user dans le projet" />
+    <MESSAGE value="delete user" />
+    <option name="LAST_COMMIT_MESSAGE" value="delete user" />
   </component>
 </project>
