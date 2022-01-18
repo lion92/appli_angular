@@ -22,10 +22,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-  this.data.getUsers().then(data=>{
-  this.users=data;
-  console.log("/////"+this.users);
-  });
+
+
 
   }
 

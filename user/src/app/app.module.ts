@@ -10,11 +10,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AddComponent } from './add/add.component';
 import { DetailuserComponent } from './detailuser/detailuser.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PopupComponent } from './popup/popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListUserComponent, UserComponent, AddComponent, DetailuserComponent
+    ListUserComponent, UserComponent, AddComponent, DetailuserComponent, PopupComponent
   ],
   imports: [
     BrowserModule,

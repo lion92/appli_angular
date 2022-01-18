@@ -1,23 +1,27 @@
 import {Injectable, NgModule} from '@angular/core';
 import { User } from '../app/User';
 import {HttpClient, HttpClientModule, HttpHeaders} from '@angular/common/http';
-
+import { Observable } from 'rxjs';
 @Injectable
 ({
   providedIn: 'root'
 })
 
 export class UserService{
-
+users:any=null;
   url: string = "http://localhost:8082/demo";
  private recupUser:User;
 
   constructor(private http: HttpClient) {
   }
+
   register(user: User) {
     return new Promise((resolve, rejects) => {
       this.http.post(this.url + '/users', user).subscribe((data: any) => {
         resolve(data);
+
+
+
       });
     });
   }
@@ -28,9 +32,14 @@ export class UserService{
           resolve(data);
       });
     });
+
+
   }
 
+ getUsers$(): Observable<User[]> {
 
+    return this.http.get<User[]>(this.url+"/users");
+  }
 
   getUsers():Promise<User[]> {
     return new Promise<User[]>((resolve, rejects) => {
@@ -44,6 +53,7 @@ export class UserService{
     return new Promise((resolve, rejects) => {
       this.http.put(this.url + '/users/'+id, user).subscribe((data: any) => {
         resolve(data);
+
       });
     });
   }
@@ -52,6 +62,7 @@ export class UserService{
       return new Promise((resolve, rejects) => {
         this.http.delete(this.url + '/users/'+id).subscribe((data: any) => {
           resolve(data);
+
         });
       });
     }
@@ -69,6 +80,11 @@ export class UserService{
     }
 
 
+getUsersList(){
+return this.users;}
 
+setUsersList(users:any){
+this.users=users;
+}
 
 }

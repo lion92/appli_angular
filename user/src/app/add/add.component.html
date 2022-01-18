@@ -1,21 +1,28 @@
-
+<div class="container ">
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="container">
   <div class="form-group">
-    <label class="ml-3" for="exampleInputEmail1">Nom</label>
-    <input  (change)="lireNom($event)"  type="text" class=" pl-3 form-control-sm" id="exampleInputEmail1" aria-describedby="Nom" formControlName="lastName" placeholder="Enter Nom">
-
-
-
-    <label class="ml-3">FirstName</label>
-    <input (change)="lirePrenom($event)" type="text" class="form-control-sm" id="exampleInputPassword1"  formControlName="firstName" placeholder="Password">
-    <label class="ml-3">Id</label>
-    <input   (change)="lireId($event)" type="text" class="form-control-sm"  placeholder="Password">
+    <label class="ml-3" for="exampleInputEmail1">Name</label>
+    <input  (ngModelChange)="lireNom($event)" value={{this.data.getUser().lastName}} type="text" class="ml-3 pl-3 form-control-sm" id="exampleInputEmail1"
+           aria-describedby="Nom" formControlName="lastName" placeholder="Enter LastName">
   </div>
+<div>
+    <label class="ml-3">FirstName</label>
+    <input  (ngModelChange)="lirePrenom($event)" type="text" class="ml-3 form-control-sm" id="exampleInputPassword1"
+           formControlName="firstName" value={{this.data.getUser().firstName}} placeholder="Enter FirstName">
+</div>
+  <div>
+    <label class="ml-3">Id</label>
+    <input id="idInputNumber"  formControlName="idName" (ngModelChange)="lireId($event)" value={{this.data.getUser().id}} type="text" class="ml-3 form-control-sm" placeholder="Enter Id">
+</div>
+  </div>
+<div class="container">
+  <button  type="submit" class="m-3 btn btn-primary">Submit</button>
+  <button   class="m-3 btn btn-primary" (click)="this.data.deleteUser(this.id)">Delete</button>
 
-  <button type="submit" class="ml-3 btn btn-primary">Submit</button>
-
+  <button   class="m-3 btn btn-primary" (click)="this.data.updateUser(this.id, {lastName:this.lastName, firstName:this.firstName, id:0})">Update
+ </button>
+</div>
 </form>
 
-<button (click)="this.data.deleteUser(this.id)">Delete</button>
-<button (click)="this.data.updateUser(this.id, {lastName:this.lastName, firstName:this.firstName, id:0})">Update</button>
-
+</div>

@@ -1,9 +1,7 @@
-
-
 <div class="row">
   <div class="col-sm list-action-button">
-    <a href="#" class="btn btn-link float-right links-primary fa fa-filter fa-lg action-label">Filter</a>
-    <a href="#" routerLink="add" class="btn btn-link float-right fa fa-file fa-lg action-label">Add New</a>
+    <a class="btn btn-link float-right links-primary fa fa-filter fa-lg action-label" href="#">Filter</a>
+    <a class="btn btn-link float-right fa fa-file fa-lg action-label" href="#" routerLink="add">Add New</a>
   </div>
 </div>
 
@@ -19,9 +17,9 @@
 
       </tr>
       </thead>
-
+      <button class="align-self-center mx-auto" (click)="refresh()">Refresh</button>
       <tbody>
-      <tr *ngFor="let user of users ; index as i">
+      <tr *ngFor="let user of users; index as i">
         <th scope="row">{{ i + 1 }}</th>
         <td>{{ user.lastName }}</td>
         <td>{{ user.firstName }}</td>
@@ -30,5 +28,6 @@
       </tr>
       </tbody>
     </table>
+
   </div>
 </div>

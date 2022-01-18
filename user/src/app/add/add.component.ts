@@ -13,15 +13,20 @@ export class AddComponent implements OnInit {
  userForm:FormGroup;
  lastName="";
  firstName="";
+
  id=0;
  valueFirstName="";
  valueLastName="";
  userToSend:User;
-   @Input() lastNameInput=this.data.getUser().lastName;
 
-   @Input() firstNameInput=this.data.getUser().firstName;
 
-  constructor(  private fb:FormBuilder, public data: UserService) { }
+
+
+   @Input() lastNameInput="";
+
+   @Input() firstNameInput="";
+
+  constructor(  private listUserComponent:ListUserComponent, private fb:FormBuilder, public data: UserService) { }
 
 
   ngOnInit(): void {
@@ -30,10 +35,14 @@ export class AddComponent implements OnInit {
      firstName:[]
 
      })
-     }
+    }
 
 
- onSubmit(){
+onSubmit(){
+
+
+
+console.log("!!!!!!!!!!"+this.lastNameInput);
  this.userToSend={
   lastName:this.userForm.value.lastName,
   firstName:this.userForm.value.firstName,
@@ -41,14 +50,20 @@ export class AddComponent implements OnInit {
  }
 
  this.data.register(this.userToSend);
+this.data.getUsers$().next(this.data.getUsers().then((data2:User[])=>{
+return data2
+}));
 
 
 
  }
 
  lireNom(event:any){
+ console.log("ok7");
   console.log(event.target.value);
+
    this.lastName=event.target.value;
+
  }
 
  lirePrenom(event:any){
